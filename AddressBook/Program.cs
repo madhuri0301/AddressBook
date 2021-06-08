@@ -2,21 +2,49 @@
 
 namespace AddressBook
 {
-    class Program
+    class program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To The Address Book System");
 
-            //user details
-            ContactDetails contactdetails = new ContactDetails("Harshu","Patil","GujarLane","Shahada","Maharashtra",425409,76872899,"harshupatil@gmail.com");
-            Console.WriteLine("Contact Detail is Created for : " + contactdetails.Firstname+ " " + contactdetails.Lastname);
-            Console.WriteLine("Address Is :" +contactdetails.Address);
-            Console.WriteLine("City Is : " + contactdetails.City);
-            Console.WriteLine("State Is : " + contactdetails.State);
-            Console.WriteLine("Zip Is : " + contactdetails.Zip);
-            Console.WriteLine("Phone Number Is : " + contactdetails.PhoneNumber);
-            Console.WriteLine("Email Is : " + contactdetails.Email);
+            AddressBookProgram AD = new AddressBookProgram();                     // Creating a Object of Main Class
+            while (true)                                // Checking a Choice with Switch Statement
+            {
+                Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Show Perticular Contact \n4. Exit");
+                Console.WriteLine("Enter a Your Choice :");
+                int ch = Convert.ToInt32(Console.ReadLine());
+
+
+                switch (ch)
+                {
+                    case 1:
+                        ContactDetails ContactDetails = AD.GetContactInput();
+                        AD.addContact(ContactDetails);
+
+                        Console.WriteLine("Contact Added Successfully");
+                        break;
+
+                    case 2:
+                        AD.ShowContactOutput();
+                        Console.WriteLine("Please Enter Your Information");
+                        break;
+
+                    case 3:
+                        AD.ShowSpecificContact();
+                        Console.WriteLine("Please Enter Your Information");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Thank You We are Exiting");
+                        return;
+
+                    default:
+                        Console.WriteLine("Sorry You are Type Wrong Choice");
+                        break;
+
+                }
+            }
         }
     }
 }

@@ -13,11 +13,11 @@ namespace AddressBook
         private string city;
         private string state;
         private long zip;
-        private long phoneNumber;
+        private string phoneNumber;
         private string email;
 
         //passing parameters
-        public ContactDetails(string firstname, string lastname, string address, string city, string state, long zip, long phoneNumber, string email)
+        public ContactDetails(string firstname, string lastname, string address, string city, string state, long zip, string phoneNumber, string email)
         {
             this.firstname = firstname;
             this.lastname = lastname;
@@ -35,7 +35,7 @@ namespace AddressBook
         public string City { get => city; set => city = value; }
         public string State { get => state; set => state = value; }
         public long Zip { get => zip; set => zip = value; }
-        public long PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Email { get => email; set => email = value; }
 
     }
