@@ -6,15 +6,15 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
+            
             Console.WriteLine("Welcome To The Address Book System");
-
-            AddressBookProgram AD = new AddressBookProgram();                     // Creating a Object of Main Class
+            
+            AddressBookProgram AD = new AddressBookProgram();                    // Creating a Object of Main Class     
             while (true)                                // Checking a Choice with Switch Statement
             {
-                Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Show Perticular Contact \n4. Exit");
+                Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Edit  \n4. Exit");
                 Console.WriteLine("Enter a Your Choice :");
                 int ch = Convert.ToInt32(Console.ReadLine());
-
 
                 switch (ch)
                 {
@@ -31,10 +31,9 @@ namespace AddressBook
                         break;
 
                     case 3:
-                        AD.ShowSpecificContact();
-                        Console.WriteLine("Please Enter Your Information");
+                        AD.EditContact();
+                        //Console.WriteLine("Contact Edited Succesfully");
                         break;
-
                     case 4:
                         Console.WriteLine("Thank You We are Exiting");
                         return;
