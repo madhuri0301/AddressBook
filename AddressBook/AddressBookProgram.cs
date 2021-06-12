@@ -126,5 +126,28 @@ namespace AddressBook
             }
             Console.WriteLine("Contact Edited Succesfully");
         }
+        public void DeleteContact()
+        {
+            String EName;
+            int temp = 0;
+            ShowContactOutput();
+            Console.WriteLine("Enter the Name of Contact you want to Delete:");
+            EName = Console.ReadLine();
+
+            for (int i = 0; i < ContactList.Count; i++)
+            {
+                if (EName.Equals(ContactList[i].Firstname))
+                {
+                    temp = 1;
+                    Console.WriteLine("The Contact Found...");
+                    ContactList.RemoveAt(i);
+                    Console.WriteLine("Contact Deleted Succesfully");
+                }
+            }
+            if (temp == 0)
+            {
+                Console.WriteLine("The Contact is Not Found...");
+            }
+        }
     }
 }

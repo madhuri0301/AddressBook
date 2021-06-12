@@ -12,7 +12,7 @@ namespace AddressBook
             AddressBookProgram AD = new AddressBookProgram();                    // Creating a Object of Main Class     
             while (true)                                // Checking a Choice with Switch Statement
             {
-                Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Edit  \n4. Exit");
+                Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Edit \n4.Delete \n5. Exit");
                 Console.WriteLine("Enter a Your Choice :");
                 int ch = Convert.ToInt32(Console.ReadLine());
 
@@ -34,7 +34,12 @@ namespace AddressBook
                         AD.EditContact();
                         //Console.WriteLine("Contact Edited Succesfully");
                         break;
+
                     case 4:
+                        AD.DeleteContact();
+                        break;
+
+                    case 5:
                         Console.WriteLine("Thank You We are Exiting");
                         return;
 
