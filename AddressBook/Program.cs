@@ -6,15 +6,14 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            int adno;
+            int adno = 0;
             Console.WriteLine("Welcome To The Address Book System");
-
 
             AddressBookProgram AD = new AddressBookProgram();                     // Creating a Object of Main Class
             AddressBookProgram AD2 = new AddressBookProgram();
-            while (true)
+            do
             {
-                Console.WriteLine("1. Personal Address Book \n 2. Shop Address Book");
+                Console.WriteLine("1. Personal Address Book \n 2. Shop Address Book \n.Exit");
                 Console.WriteLine("Select the Address Book:");
                 adno = Convert.ToInt32(Console.ReadLine());
                 switch (adno)
@@ -25,10 +24,13 @@ namespace AddressBook
                     case 2:
                         ManageADBOOK(AD2);
                         break;
-                    default:
+                    case 3:
+                        Console.WriteLine("Thank You For Exiting");
                         break;
                 }
-            }
+            } while (adno < 3);
+
+
         }
         public static void ManageADBOOK(AddressBookProgram ABP)
         {
