@@ -149,5 +149,18 @@ namespace AddressBook
                 Console.WriteLine("The Contact is Not Found...");
             }
         }
+        public void DuplicateContact() //To Check Duplicate Contact Exist Or Not
+        {
+            Console.WriteLine("Enter A Contact Name");
+            string duplicatename = Console.ReadLine();
+            for (int i = 0; i < ContactList.Count; i++)
+            {
+                if (duplicatename.Equals(ContactList[i].Firstname))
+                {
+                    Console.WriteLine("Contact Name Is Already Exist");
+
+                }
+            }
+        }
     }
 }

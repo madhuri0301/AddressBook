@@ -36,7 +36,7 @@ namespace AddressBook
         {
             //while (true)                                // Checking a Choice with Switch Statement
             // {
-            Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Edit \n4. Delete \n5. Exit");
+            Console.WriteLine("1. Adding Contact \n2. Show All Contact \n3. Edit \n4. Delete \n5.Add Multiple Person \n6. Exit");
             Console.WriteLine("Enter a Your Choice :");
             int ch = Convert.ToInt32(Console.ReadLine());
 
@@ -62,9 +62,11 @@ namespace AddressBook
                     ABP.DeleteContact();
                     break;
                 case 5:
+                    ABP.DuplicateContact();
+                    break;
+                case 6:
                     Console.WriteLine("Thank You We are Exiting");
                     return;
-
                 default:
                     Console.WriteLine("Sorry You are Type Wrong Choice");
                     break;
